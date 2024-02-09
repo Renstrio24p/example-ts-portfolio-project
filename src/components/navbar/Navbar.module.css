@@ -1,0 +1,83 @@
+
+.navbar h1 {
+    font-weight: 500;
+}
+
+:where(
+    .navbar,
+    .navbar .left,
+    .navbar .right,
+    .navbar .right ul
+    ){
+        display: flex;
+        align-items: center;
+    }
+
+.navbar {
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.navbar .right > ul {
+    column-gap: 20px;
+}
+
+.navbar .right > ul a {
+    color: white;
+}
+
+/* Menu Collapse */
+.menubar {
+    border: 1px solid white;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.menubar i {
+    font-size: 20px;
+}
+
+.right {
+    display: block;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 560px) {
+    .right {
+        right: -120px;
+        top: 60px;
+        position: absolute;
+        height: 100vh;
+        visibility: hidden;
+    }
+
+    .menubar {
+        display: grid;
+    }
+    
+    .collapse {
+        display: block;
+        width: 120px;
+        top: 60px;
+        right: 5px;
+        animation: fadeInLeft 3s 0s ease;
+        background-color: gray;
+        padding: 20px;
+        visibility: visible;
+    }
+
+
+    .collapse ul {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

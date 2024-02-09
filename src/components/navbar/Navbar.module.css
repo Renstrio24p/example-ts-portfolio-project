@@ -48,7 +48,6 @@
 
 .right {
     display: block;
-    visibility: hidden;
 }
 
 @media screen and (max-width: 560px) {
